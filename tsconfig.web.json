@@ -1,7 +1,13 @@
 {
   "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
-  "include": ["src/renderer/**/*.ts", "src/preload/*.d.ts"],
+  "typeRoots": ["node_modules/@types"],
+  "lib": ["DOM", "DOM.Iterable", "ESNext"],
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@renderer/*": ["src/renderer/src/*"]
+    }
   }
 }

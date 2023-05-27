@@ -1,9 +1,9 @@
-import { ElectronAPI } from '@electron-toolkit/preload'
-import type { Service } from "../main/service"
+import { ElectronAPI } from "@electron-toolkit/preload";
+import type { AppAPI } from "./appAPI";
 
 declare global {
   interface Window {
-    electron: ElectronAPI
-    service: Service
+    electron: ElectronAPI;
+    api: AppAPI;
   }
 }
